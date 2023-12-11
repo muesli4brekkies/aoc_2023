@@ -2,7 +2,7 @@ use std::fs;
 fn main() {
     println!(
         "{}",
-        fs::read_to_string("./aoc_1_input.txt")
+        fs::read_to_string("../../inputs/aoc_1_input.txt")
             .unwrap()
             .split("\n")
             .filter_map(|e| if e.len() > 0 {
