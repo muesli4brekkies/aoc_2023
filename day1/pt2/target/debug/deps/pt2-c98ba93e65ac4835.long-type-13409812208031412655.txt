@@ -1,0 +1,1 @@
+FilterMap<std::str::Split<'_, &str>, fn(Vec<char>) -> Option<Vec<char>> {strip_numerics}>
