@@ -1,0 +1,1 @@
+Map<Map<Filter<std::str::Split<'_, &str>, [closure@src/main.rs:40:17: 40:20]>, for<'a> fn(&'a str) -> String {words_to_digits}>, for<'a> fn(&'a str) -> Vec<char> {strip_non_numerics}>

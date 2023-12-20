@@ -1,0 +1,1 @@
+Map<FilterMap<std::str::Split<'_, &str>, for<'a> fn(&'a str) -> Option<Vec<char>> {strip_nums}>, for<'a> fn(&'a str) -> i32 {format_n_parse}>
