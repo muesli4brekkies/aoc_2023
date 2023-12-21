@@ -37,7 +37,7 @@ fn main() {
                 .unwrap()
         })
         .reduce(|a, b| a + b)
-        .unwrap_or(0);
+        .unwrap();
 
     println!("{}", result)
 }
