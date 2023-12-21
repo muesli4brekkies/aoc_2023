@@ -1,5 +1,5 @@
 use std::fs;
-fn findmin(col: &str, strings: &Vec<&str>) -> i32 {
+fn findmin(col: &str, strings: &[&str]) -> i32 {
     strings
         .iter()
         .filter(|string| string.split(' ').collect::<Vec<&str>>()[1] == col)
@@ -14,25 +14,21 @@ fn findmin(col: &str, strings: &Vec<&str>) -> i32 {
             }
         })
 }
+
 fn main() {
-    let COLOURS: Vec<&str> = vec!["red", "green", "blue"];
     let file_string = fs::read_to_string("/home/muesli/git/aoc_2023/day2/input.txt").unwrap();
     let result: i32 = file_string
         .lines()
         .map(|e| {
             e.split(|c| c == ';' || c == ':' || c == ',')
                 .map(str::trim)
-                .collect::<Vec<_>>()
+                .collect::<Vec<&str>>()
         })
-        .map(|strings| {
-            COLOURS
+        .fold(0, |a, strings| {
+            a + ["red", "green", "blue"]
                 .iter()
-                .map(|col| findmin(col, &strings))
-                .reduce(|a, b| a * b)
-                .unwrap()
-        })
-        .reduce(|a, b| a + b)
-        .unwrap();
+                .fold(1, |a, col| a * findmin(col, &strings))
+        });
 
     println!("{}", result)
 }
