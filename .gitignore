@@ -8,3 +8,8 @@ day2/pt2/target/
 
 day3/pt1/target/
 day3/pt2/target/
+
+
+# Added by cargo
+
+/target

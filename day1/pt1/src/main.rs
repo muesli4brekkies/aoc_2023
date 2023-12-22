@@ -1,7 +1,7 @@
 use std::fs;
 
 fn main() {
-    let result = fs::read_to_string("/home/muesli/git/aoc_2023/input.txt")
+    let result: i32 = fs::read_to_string("/home/muesli/git/aoc_2023/day1/input.txt")
         .unwrap()
         .split("\n")
         .filter_map(|e| {
@@ -16,7 +16,6 @@ fn main() {
                 .parse::<i32>()
                 .unwrap()
         })
-        .reduce(|a.b|a+b)
-        .unwrap();
+        .sum();
     println!("{result}")
 }
